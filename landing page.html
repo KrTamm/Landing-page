@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         li {
+         display: inline;
+         margin: 25px;
+         }
+         a {
+         text-decoration: none;
+         color: black;
+         }
+         li {
+         list-style: none;
+         }
+         header {
+         top: 0;
+         min-height: 75px;
+         padding: 0px 20px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         background-color: #eee;
+         }
+         #stuff {
+         text-align: center;
+         }
+         .btn {
+         margin: 15px;
+         padding: 0 20px;
+         height: 40px;
+         font-size: 1em;
+         font-weight: 900;
+         text-transform: uppercase;
+         border: 3px black solid;
+         border-radius: 2px;
+         background: transparent;
+         cursor: pointer;
+         }
+         @media (min-width:300px){
+         #video {
+         background-color: lightgreen;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <header id="header">
+         <div class="logo">
+            <img id="header-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Honda-logo.svg/2560px-Honda-logo.svg.png" width="200" alt="Honda logo">
+         </div>
+         <nav id="nav-bar">
+            <ul>
+               <li>
+                  <a class="nav-link" href="#Specs">Specs</a>
+               </li>
+               <li>   
+                  <a class="nav-link" href="#Color">Color</a>
+               </li>
+               <li>   
+                  <a class="nav-link" href="#Price">Price</a>
+               </li>
+            </ul>
+         </nav>
+      </header>
+      <section id="stuff">
+         <h2> Recieve your own Honda here </h2>
+         <form id="form" action=" https://www.freecodecamp.com/email-submit">
+         <input name="email" id="email" type="email" placeholder="Enter your email adress" required><br>
+         <input id="submit" type="submit" value="Yes please!" class="btn">
+      </section>
+      <div class="container">
+         <section id="Specs"> 
+            It goes very fast
+            <iframe id="video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/oavMtUWDBTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         </section>
+         <section id="Color">
+            The colors are amazing
+            <hr>
+         </section>
+         <section id="Price">
+            The price is cheap
+         </section>
+      </div>
+   </body>
+</html>

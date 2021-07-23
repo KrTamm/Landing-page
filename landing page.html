@@ -3,44 +3,133 @@
    <head>
       <style>
          li {
-         display: inline;
-         margin: 25px;
+         	display: inline;
+         	margin: 25px;
          }
          a {
-         text-decoration: none;
-         color: black;
+         	text-decoration: none;
+         	color: black;
          }
          li {
-         list-style: none;
+         	list-style: none;
+         	display: list-item;
+         }
+         ol {
+         	display: block;
+         	list-style-type: decimal;
+         	margin-block-start: 1em;
+         	margin-block-end: 1em;
+         	margin-inline-start: 0px;
+         	margin-inline-end: 0px;
+         	padding-inline-start: 40px;
          }
          header {
-         top: 0;
-         min-height: 75px;
-         padding: 0px 20px;
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         background-color: #eee;
+         	position: fixed ;
+         	width: 100%;
+         	top: 0;
+         	min-height: 75px;
+         	display: flex;
+         	justify-content: space-between;
+         	align-items: center;
+         	background-color: #eee;
          }
-         #stuff {
-         text-align: center;
+         #honda-get {
+         	text-align: center;
+         	margin-top: 100px;
+         }
+         #Video {
+         	display: block;
+         	flex-direction: column;
+         	max-width: 560px;
+         	width: 100%;
+         	margin-left: auto;
+         	margin-right: auto;
+         }
+         #Specs {
+         	margin-left: 100px;
+         }
+         #Color {
+         	margin-left: auto;
+         	margin-right: auto;
+         	display: grid;
+         	grid-template-columns: repeat(3, 1fr);
+         	padding-bottom: 10px;
+         	padding-left: 240px;
+         }
+         #Price {
+         	margin-top: 60px;
+         	display: flex;
+         	flex-direction: row;
+         	justify-content: center;
          }
          .btn {
-         margin: 15px;
-         padding: 0 20px;
-         height: 40px;
-         font-size: 1em;
-         font-weight: 900;
-         text-transform: uppercase;
-         border: 3px black solid;
-         border-radius: 2px;
-         background: transparent;
-         cursor: pointer;
+         	margin: 15px;
+         	padding: 0 20px;
+         	height: 40px;
+         	font-size: 1em;
+         	font-weight: 900;
+         	text-transform: uppercase;
+         	border: 3px black solid;
+         	border-radius: 2px;
+         	background: transparent;
+         	cursor: pointer;
          }
-         @media (min-width:300px){
-         #video {
-         background-color: lightgreen;
+         .iframe-container {
+         	background-color: green;
+         	position: relative;
+         	width: 100%;
          }
+         .iframe-container iframe {
+         	position: absolute;
+         	top: 0;
+         	left: 0;
+         	width: 100%;
+         	height: 100%;
+         }
+         .red {
+         	border-color: black;
+         	border-width: 5px;
+         	border-style: solid;
+         	height: 100px;
+         	width: 100px;
+         	background-color: #e71837;
+         	border-radius: 50%;
+         }
+         .blue {
+         	border-color: black;
+         	border-width: 5px;
+         	border-style: solid;
+         	height: 100px;
+         	width: 100px;
+         	background-color: #4e6e81;
+         	border-radius: 50%;
+         }
+         .silver {
+         	border-color: black;
+         	border-width: 5px;
+         	border-style: solid;
+         	height: 100px;
+         	width: 100px;
+         	background-color: #d0d2d1;
+         	border-radius: 50%;
+         }
+         .product {
+         	display: flex;
+         	flex-direction: column;
+         	align-items: center;
+         	text-align: center;
+         	width: calc(100% / 4);
+         	margin: 10px;
+         	border: 1px solid #000;
+         	border-radius: 3px;
+         }
+         .product > .level {
+         	background-color: #ddd;
+         	color: black;
+         	padding: 15px 0;
+         	width: 100%;
+         	text-transform: uppercase;
+         	font-weight: 700;
          }
       </style>
    </head>
@@ -51,36 +140,87 @@
          </div>
          <nav id="nav-bar">
             <ul>
-               <li>
+               <li style="display:inline;">
                   <a class="nav-link" href="#Specs">Specs</a>
                </li>
-               <li>   
+               <li style="display:inline;">
                   <a class="nav-link" href="#Color">Color</a>
                </li>
-               <li>   
+               <li style="display:inline;"> 
+                  <a class="nav-link" href="#Video">Video</a>
+               </li>
+               <li style="display:inline;"> 
                   <a class="nav-link" href="#Price">Price</a>
                </li>
             </ul>
          </nav>
       </header>
-      <section id="stuff">
+      <section id="honda-get">
          <h2> Recieve your own Honda here </h2>
          <form id="form" action=" https://www.freecodecamp.com/email-submit">
          <input name="email" id="email" type="email" placeholder="Enter your email adress" required><br>
          <input id="submit" type="submit" value="Yes please!" class="btn">
       </section>
-      <div class="container">
-         <section id="Specs"> 
-            It goes very fast
-            <iframe id="video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/oavMtUWDBTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-         </section>
-         <section id="Color">
-            The colors are amazing
-            <hr>
-         </section>
-         <section id="Price">
-            The price is cheap
-         </section>
-      </div>
+      <section id="Specs">
+         <u>
+            <h2> Seating: 5 </h2>
+            <h2> 7.1-7.8 l/100km city </h2>
+            <h2> 5.6-6.3 l/100km highway </h2>
+            <h2> 117 - 134 kW </h2>
+         </u>
+      </section>
+      <section id="Color">
+         <div class="red">
+         </div>
+         <div class="blue">
+         </div>
+         <div class="silver">
+         </div>
+      </section>
+      <section id="Video">
+         <iframe class="iframe-container" width="560" height="315" src="https://www.youtube-nocookie.com/embed/IqfOBQwuCMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
+      <section id="Price">
+         <div class="product" id="LX">
+            <div class="level">LX</div>
+            <h2>$21,700</h2>
+            <ol>
+               <li>158-hp, 2.0L Engine</li>
+               <li>Sport Mode</li>
+               <li>Apple CarPlay® Integration</li>
+               <li>LED Headlights with Auto-On/Off</li>
+            </ol>
+         </div>
+         <div class="product" id="Sport">
+            <div class="level">Sport</div>
+            <h2>$23,100</h2>
+            <ol>
+               <li>18-Inch Gloss-Black Alloy Wheels</li>
+               <li>Paddle Shifters</li>
+               <li>Leather-Wrapped Steering Wheel</li>
+               <li>Smart Entry w/Walk Away Auto Lock®</li>
+            </ol>
+         </div>
+         <div class="product" id="EX">
+            <div class="level">EX</div>
+            <h2>$24,700</h2>
+            <ol>
+               <li>180-hp Turbocharged Engine</li>
+               <li>Blind Spot Information System</li>
+               <li>One-Touch Power Moonroof</li>
+               <li>Heated Front Seats</li>
+            </ol>
+         </div>
+         <div class="product" id="Touring">
+            <div class="level">Touring</div>
+            <h2>$28,300</h2>
+            <ol>
+               <li>Leather-Trimmed Seats</li>
+               <li>Bose Premium Sound System</li>
+               <li>Wireless Apple CarPlay® Integration</li>
+               <li>Wireless Phone Charger</li>
+            </ol>
+         </div>
+      </section>
    </body>
 </html>
